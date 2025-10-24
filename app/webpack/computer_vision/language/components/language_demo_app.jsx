@@ -80,10 +80,10 @@ class ComputerVisionEvalApp extends Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  header( ) {
+  header() {
     return (
-      <nav className="navbar navbar-default">
-        <div className="container">
+      <nav className="navbar navbar-default header">
+        <div className="container-fluid">
           <div className="navbar-header">
             <div className="logo">
               <a href="/" className="navbar-brand" title={SITE.name} alt={SITE.name}>
@@ -91,15 +91,7 @@ class ComputerVisionEvalApp extends Component {
               </a>
             </div>
             <div className="title">
-              <a
-                href="/vision_language_demo"
-                onClick={e => {
-                  e.preventDefault( );
-                  this.reset( );
-                }}
-              >
-                { I18n.t( "views.nls_demo.vision_language_demo" ) }
-              </a>
+              {I18n.t("views.nls_demo.vision_language_demo")}
             </div>
           </div>
         </div>
@@ -181,7 +173,7 @@ class ComputerVisionEvalApp extends Component {
       <div className="col-md-2 action-buttons">
         <button
           type="button"
-          className="btn btn-primary search"
+          className="btn btn-success search"
           disabled={
             _.isEmpty( this.state.searchTerm )
             || this.props.votingEnabled

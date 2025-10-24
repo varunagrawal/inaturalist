@@ -80,7 +80,6 @@
 
 body {
   font-family: Lato, "Trebuchet MS", Arial, sans-serif;
-  background: #eee;
 }
 
 a:hover, a:focus {
@@ -93,6 +92,10 @@ a:hover, a:focus {
 
 .form-control[disabled] {
   background-color: white;
+}
+
+.navbar-default {
+  background: #eee;
 }
 
 .navbar-header {
