@@ -6699,14 +6699,14 @@ tr:
           Bu konuşmayı %{date} tarihinde işaretledin. Bu konuşmanın kopyasını silsen bile işaret kalıcı olacaktır, bu nedenle artık bunu görmek istemiyorsan bunu yapman güvenlidir.
         privacy_notice_html: |
           İletiler sen ve alıcı arasında özel olsa da, iNaturalist personeli de bu iletileri görüntüleyebilir ve iletiler moderasyon için işaretlendiğinde bu yapılacaktır. Gerçekten özel iletişim istiyorsan, lütfen güçlü şifrelemeyi destekleyen diğer iletişim mekanizmalarını araştır.
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: Görü Dili Demosu
+      vision_language_searchch: Görü Dili Demosu
       what_do_you_want_to_search_for: Ne aramak istersin?
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

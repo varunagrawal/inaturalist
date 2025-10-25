@@ -6071,14 +6071,14 @@ ja:
           メールを確認した後、新しいメッセージを送信できるようになります
           アドレス、および3つの検証可能な観察または3つの識別を追加しました
           他の人にとっては。今のところ、他の人から送られてきたメッセージを読んだり、返信したりすることができます。
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: ビジョン・ランゲージのデモ
+      vision_language_searchch: ビジョン・ランゲージのデモ
       what_do_you_want_to_search_for: 何を検索しますか？
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

@@ -6157,8 +6157,8 @@ es-AR:
         speech_privilege_notice: |
           Vas a poder enviar nuevos mensajes después de haber agregado tres
           observaciones verificables o tres identificaciones para otros usuarios. Por ahora podés leer y responder mensajes que otras personas te envíen.
-    nls_demo:
-      #Provides an example of a query to use with the Vision Language Demo.
+    language_search:
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

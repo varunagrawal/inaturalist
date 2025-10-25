@@ -6728,14 +6728,14 @@ id:
           Anda menandai percakapan ini pada %{date}. Tanda ini akan tetap ada meskipun Anda menghapus salinan dari percakapan ini, jadi hal ini aman untuk dilakukan jika Anda tidak mau melihat ini lagi.
         privacy_notice_html: |
           Saat pesan diatur untuk pribadi di antara Anda dan penerimanya, staf iNaturalist dapat melihat pesan-pesan ini juga, dan mereka akan melakukannya ketika ada pesan yang ditandai untuk moderasi. Jika Anda membutuhkan komunikasi yang benar-benar pribadi, silakan mencari mekanisme komunikasi lainnya yang mendukung enkripsi yang kuat.
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: Demo Bahasa Penglihatan
+      vision_language_searchch: Demo Bahasa Penglihatan
       what_do_you_want_to_search_for: Apa yang ingin Anda cari?
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

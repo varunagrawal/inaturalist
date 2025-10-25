@@ -6934,14 +6934,14 @@ ru:
           Вы отметили этот разговор %{date}. Флаг будет сохраняться даже в том случае, если вы удалите копию этого разговора, так что можно это сделать без опасений, если вы больше не хотите его видеть.
         privacy_notice_html: |
           Хотя сообщения являются конфиденциальными между вами и получателем, сотрудники iNaturalist также могут просматривать эти сообщения и будут делать это, когда сообщения будут помечены для модерации. Если вам требуется действительно личное общение, пожалуйста, изучите другие механизмы связи, которые поддерживают надежное шифрование.
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: Демонстрация визуального языка
+      vision_language_searchch: Демонстрация визуального языка
       what_do_you_want_to_search_for: Что вы хотите найти?
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

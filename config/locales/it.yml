@@ -6723,14 +6723,14 @@ it:
           Hai contrassegnato questa conversazione il %{date}. Il contrassegno persisterà anche se cancelli la tua copia di questa conversazione, quindi puoi farlo tranquillamente se non vuoi più vederlo.
         privacy_notice_html: |
           Mentre i messaggi sono privati tra te ed il destinatario, anche lo staff di iNaturalist può visionare questi messaggi, e lo farà quando i messaggi sono stati contrassegnati per la moderazione. Se hai bisogno di una comunicazione realmente privata, sei pregato di cercare altri sistemi di comunicazione che supportano una forte crittografia.
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: Demo Linguaggio Visiva
+      vision_language_search: Demo Linguaggio Visiva
       what_do_you_want_to_search_for: Cosa vuoi cercare?
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

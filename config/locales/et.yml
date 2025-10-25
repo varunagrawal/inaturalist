@@ -5287,8 +5287,8 @@ et:
           Pärast e-posti aadressi kinnitamist saate uusi sõnumeid saata
           aadressi ja lisas kolm kontrollitavat tähelepanekut või kolm identifitseerimist
           teiste jaoks. Praegu saate lugeda sõnumeid, mida teised inimesed teile saadavad, ja neile vastata.
-    nls_demo:
-      #Provides an example of a query to use with the Vision Language Demo.
+    language_search_search:
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

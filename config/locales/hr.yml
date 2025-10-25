@@ -7021,14 +7021,14 @@ hr:
           budu označene za moderiranje. Ako trebate zaista privatnu
           komunikaciju, molimo vas da razmotrite druge komunikacijske mehanizme koji
           podržavaju snažnu enkripciju.
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: Demo modela vida
+      vision_language_searchch: Demo modela vida
       what_do_you_want_to_search_for: Što želiš pretraživati?
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

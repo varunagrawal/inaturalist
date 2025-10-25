@@ -6940,14 +6940,14 @@ sv:
           Du flaggade den här konversationen den %{date}. Flaggan kommer att bestå även om du tar bort din kopia av denna konversation, så det är säkert att göra det om du inte längre vill se detta.
         privacy_notice_html: |
           Även om meddelanden mellan dig och mottagaren är privata, kan iNaturalist-personal också läsa dessa meddelanden, och kommer att göra det när meddelanden har flaggats för moderering. Om du behöver verkligt privat kommunikation, se dig om efter andra kommunikationssätt som stöder stark kryptering.
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: Vision Language-demo
+      vision_language_searchch: Vision Language Search
       what_do_you_want_to_search_for: Vad letar du efter?
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

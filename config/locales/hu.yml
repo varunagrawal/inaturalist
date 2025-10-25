@@ -5677,14 +5677,14 @@ hu:
           Az e-mail-cím megerősítése után új üzeneteket küldhet
           címet, és három ellenőrizhető megfigyelést vagy három azonosítást adott hozzá
           másoknak. Egyelőre elolvashatja és válaszolhat mások által küldött üzenetekre.
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: A képi és szöveges model bemutatója
+      vision_language_searchch: A képi és szöveges model bemutatója
       what_do_you_want_to_search_for: Mit keresel?
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

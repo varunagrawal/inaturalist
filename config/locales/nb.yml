@@ -6233,7 +6233,7 @@ nb:
           Du har markert denne samtalen på %{date}. Markeringen vil være der selv hvis du sletter din kopi av denne samtalen, så det er trygt å gjøre det hvis du ikke ønsker å se dette mere.
         privacy_notice_html: |
           Mens meldinger er private mellom deg og mottakeren, kan iNaturalist ansatte se disse meldingene også, og vil gjøre det når meldinger har blitt markert for moderering. Hvis du trenger ordentlig privat kommunikasjon, vennligst se på andre kommunikasjonsmekanismer som støtter sterk kryptering.
-    nls_demo:
+    language_search:
       #shortened text for a button requesting users help us improve the model
       #being using, hence the missing subject (implied to be the model). Try
       #to keep it under 20 characters

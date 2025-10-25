@@ -5978,12 +5978,12 @@ zh-TW:
           當您和收件者之間私訊時，iNaturalist 工作人員可以檢視這些訊息，
           而且當訊息被標記為審核時也會如此進行。如果您真的需要私人通訊，
           請參考其他支援高強度加密的通訊機制。
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: 視覺語言模型示範
+      vision_language_search: 視覺語言模型示範
       what_do_you_want_to_search_for: 您想要找尋什麼？
       try_one_of_these_example_searches_colon: "試著用這些範例之一來搜尋"
       #shortened text for a button requesting users help us improve the model

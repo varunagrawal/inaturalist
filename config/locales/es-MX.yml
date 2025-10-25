@@ -6602,14 +6602,14 @@ es-MX:
           si ya no quieres ver esto más.
         privacy_notice_html: |
           Aunque los mensajes son privados, el personal de iNaturalist puede verlos, y lo harán cuando hayan sido denunciados. Si necesitas una comunicación auténticamente privada, por favor, usa otros mecanismos que incluyan encriptación de alto nivel.
-    nls_demo:
+    language_search_search_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: Demo de Idioma de Visión
+      vision_language_searchch: Demo de Idioma de Visión
       what_do_you_want_to_search_for: '¿Qué deseas buscar?'
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

@@ -6630,14 +6630,14 @@ zh-CN:
           您于 %{date} 标记了此对话。这个标记在您删除此对话的副本后仍然存在，所以如果您不想再看到它的话，删除它是没问题的。
         privacy_notice_html: |
           虽然消息在您和收件人之间是私密的，iNaturalist 工作人员也可以在消息被标记为适度时查看它们。如果您需要真正的私人通讯，请查看支持强化加密的其他通讯机制。
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: 视觉语言演示
+      vision_language_searchch: 视觉语言演示
       what_do_you_want_to_search_for: 您希望搜索什么？
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to

@@ -6930,14 +6930,14 @@ he:
           סימנת תכתובת זו ב-%{date}. הסימון יישאר אפילו אם תמחק.י את העותק שלך של התכתובת, לכן זה בטיחותי לעשות זאת אם ברצונך לא לראות את זה יותר.
         privacy_notice_html: |
           אמנם הודעות הן פרטיות בינך לבין הנמענ.ת, אך גם צוות iNaturalist יכול לצפות בהודעות אלו, ויעשה זאת כאשר הודעות מסומנות לתיווך. אם יש לך צורך בתקשורת פרטית באמת, נא לבדוק אמצעי תקשורת אחרים התומכים בהצפנה חזקה.
-    nls_demo:
+    language_search:
       #Vision Language models are machine-learning models that can work with
       #both text and images. They can for example search images with a text
       #prompt, search text with an image prompt, or search images given another
       #image as a prompt
-      vision_language_demo: דמו ראיית שפה
+      vision_language_searchch: דמו ראיית שפה
       what_do_you_want_to_search_for: מה את.ה רוצה לחפש?
-      #Provides an example of a query to use with the Vision Language Demo.
+      #Provides an example of a query to use with the Vision Language Search.
       #query_in_english will be something like "a bird eating fruit".
       #Queries do not need to be in English but the model should perform
       #better with English queries, so we want our example queries to
