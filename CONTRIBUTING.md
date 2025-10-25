@@ -34,6 +34,17 @@ You can skip the sections on setting up redis, memcached, postgis, and Elasticse
 
 The [Development Setup Guide](https://github.com/inaturalist/inaturalist/wiki/Development-Setup-Guide) should provide steps for getting set up, but be warned, it's not particularly easy. If you need help, please ask in the [Forum](https://forum.inaturalist.org).
 
+### Internationalization
+
+Please see the guidelines in the [locales README](config/locales/README.md).
+
+The translations are specified in `.yml` files in `config/locales`, and are converted to JS files which are used by i18n.
+To generate the translations, you can run
+
+```sh
+rake inaturalist:generate_translations_js
+```
+
 ## Reporting Issues
 
 If you've found a problem in the code, please supply detailed reproduction conditions, cite line numbers, include exceptions / stack traces, etc. If you can't supply this kind of information, we will probably close your issue and suggest you post to the [Forum](https://forum.inaturalist.org/).
