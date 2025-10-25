@@ -738,10 +738,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :vision_language_demo, only: :index, controller: :language_demo do
+  resource :language_search, only: :index, controller: :language_search do
     collection do
       get :index
-      post :record_votes
     end
   end
 

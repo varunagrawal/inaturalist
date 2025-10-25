@@ -1,20 +1,16 @@
 import { connect } from "react-redux";
-import LanguageDemoApp from "../components/language_demo_app";
+import LanguageSearchApp from "../components/language_search_app";
 import {
   languageSearch,
   nextPage,
   previousPage,
-  toggleVoting,
-  submitVotes,
-  voteRemainingUp,
-  voteRemainingDown,
   viewInIdentify,
   acknowledgeSubmission,
   resetState
-} from "../reducers/language_demo_reducer";
+} from "../reducers/language_search_reducer";
 
 const mapStateToProps = state => ( {
-  ...state.languageDemo,
+  ...state.languageSearch,
   config: state.config
 } );
 
@@ -28,18 +24,6 @@ const mapDispatchToProps = dispatch => ( {
   previousPage: options => {
     dispatch( previousPage( options ) );
   },
-  toggleVoting: ( ) => {
-    dispatch( toggleVoting( ) );
-  },
-  submitVotes: options => {
-    dispatch( submitVotes( options ) );
-  },
-  voteRemainingUp: ( ) => {
-    dispatch( voteRemainingUp( ) );
-  },
-  voteRemainingDown: ( ) => {
-    dispatch( voteRemainingDown( ) );
-  },
   viewInIdentify: ( ) => {
     dispatch( viewInIdentify( ) );
   },
@@ -51,9 +35,9 @@ const mapDispatchToProps = dispatch => ( {
   }
 } );
 
-const LanguageDemoContainer = connect(
+const LanguageSearchContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)( LanguageDemoApp );
+)( LanguageSearchApp );
 
-export default LanguageDemoContainer;
+export default LanguageSearchContainer;

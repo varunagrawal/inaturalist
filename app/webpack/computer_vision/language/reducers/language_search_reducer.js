@@ -3,9 +3,9 @@ import update from "immutability-helper";
 import inaturalistjs from "inaturalistjs";
 import { setConfirmModalState } from "../../../shared/ducks/confirm_modal";
 
-const RESET_STATE = "language_demo/RESET_STATE";
-const SET_ATTRIBUTES = "language_demo/SET_ATTRIBUTES";
-const UPDATE_STATE = "language_demo/UPDATE_STATE";
+const RESET_STATE = "language_search/RESET_STATE";
+const SET_ATTRIBUTES = "language_search/SET_ATTRIBUTES";
+const UPDATE_STATE = "language_search/UPDATE_STATE";
 
 const MAX_PAGES = 5;
 
@@ -47,8 +47,6 @@ const DEFAULT_STATE = {
   searchedTaxon: null,
   searchResponse: { },
   lastSearchTime: new Date( ).getTime( ),
-  votes: { },
-  votingEnabled: false,
   submissionAcknowledged: false,
   iconicTaxa: { }
 };
@@ -140,16 +138,6 @@ export function updateState( newState ) {
   };
 }
 
-export function toggleVoting( ) {
-  return ( dispatch, getState ) => {
-    const { languageDemo } = getState( );
-    dispatch( setAttributes( {
-      votingEnabled: !languageDemo.votingEnabled,
-      votes: {}
-    } ) );
-  };
-}
-
 export function languageSearch( searchTerm, searchTaxon, params = { }, options = { } ) {
   return async dispatch => {
     const searchTime = new Date( ).getTime( );
@@ -191,14 +179,12 @@ export function languageSearch( searchTerm, searchTaxon, params = { }, options =
       dispatch( setAttributes( {
         searchStatus: "done",
         searchResponse: response,
-        votes: { }
       } ) );
     } ).catch( ( ) => {
       dispatch( setAttributes( {
         searchStatus: null,
         searchedTerm: null,
         searchResponse: null,
-        votes: { }
       } ) );
     } );
   };
@@ -206,48 +192,30 @@ export function languageSearch( searchTerm, searchTaxon, params = { }, options =
 
 export function nextPage( options = { } ) {
   return async ( dispatch, getState ) => {
-    const { languageDemo } = getState( );
-    if ( !languageDemo.searchedTerm || languageDemo.searchResponse.page >= 5 ) {
+    const { languageSearch } = getState( );
+    if ( !languageSearch.searchedTerm || languageSearch.searchResponse.page >= 5 ) {
       return;
     }
     if ( options.scrollTop ) {
       $( document ).scrollTop( 0 );
     }
-    dispatch( languageSearch( languageDemo.searchedTerm, languageDemo.searchedTaxon, {
-      page: languageDemo.searchResponse.page + 1
+    dispatch( languageSearch( languageSearch.searchedTerm, languageSearch.searchedTaxon, {
+      page: languageSearch.searchResponse.page + 1
     } ) );
   };
 }
 
 export function previousPage( options = { } ) {
   return async ( dispatch, getState ) => {
-    const { languageDemo } = getState( );
-    if ( !languageDemo.searchedTerm || languageDemo.searchResponse.page === 1 ) {
+    const { languageSearch } = getState( );
+    if ( !languageSearch.searchedTerm || languageSearch.searchResponse.page === 1 ) {
       return;
     }
     if ( options.scrollTop ) {
       $( document ).scrollTop( 0 );
     }
-    dispatch( languageSearch( languageDemo.searchedTerm, languageDemo.searchedTaxon, {
-      page: languageDemo.searchResponse.page - 1
-    } ) );
-  };
-}
-
-export function voteOnPhoto( photoID, vote ) {
-  return ( dispatch, getState ) => {
-    const { languageDemo } = getState( );
-    if ( _.has( languageDemo.votes, photoID ) && vote === languageDemo.votes[photoID] ) {
-      dispatch( setAttributes( {
-        votes: _.omit( languageDemo.votes, [photoID] )
-      } ) );
-      return;
-    }
-    dispatch( updateState( {
-      votes: {
-        ...languageDemo.votes,
-        [photoID]: ( vote === true )
-      }
+    dispatch( languageSearch( languageSearch.searchedTerm, languageSearch.searchedTaxon, {
+      page: languageSearch.searchResponse.page - 1
     } ) );
   };
 }
@@ -264,81 +232,11 @@ export function fetchIconicTaxa( ) {
   };
 }
 
-export function submitVotes( options = { } ) {
-  return ( dispatch, getState ) => {
-    const { languageDemo, config } = getState( );
-    if ( options.scrollTop ) {
-      $( document ).scrollTop( 0 );
-    }
-    const payload = {
-      search_term: languageDemo.searchedTerm,
-      page: languageDemo.searchResponse.page,
-      votes: []
-    };
-    if ( languageDemo.searchedTaxon ) {
-      payload.taxon_id = languageDemo.searchedTaxon.id;
-    }
-    if ( config.currentUser ) {
-      payload.user_id = config.currentUser.id;
-    }
-    _.each( languageDemo.searchResponse.results, result => {
-      const vote = _.has( languageDemo.votes, result.photo_id )
-        ? languageDemo.votes[result.photo_id].toString( ) : null;
-      payload.votes.push( {
-        id: result.photo_id,
-        vote,
-        score: result.score
-      } );
-    } );
-    fetch( "/vision_language_demo/record_votes", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify( {
-        authenticity_token: $( "meta[name=csrf-token]" ).attr( "content" ),
-        language_demo_log: payload
-      } )
-    } );
-    dispatch( setConfirmModalState( {
-      show: true,
-      message: I18n.t( "views.nls_demo.thank_you_for_your_submission!" )
-    } ) );
-  };
-}
-
-export function voteRemainingUp( ) {
-  return ( dispatch, getState ) => {
-    const { languageDemo } = getState( );
-    const newVotes = { ...languageDemo.votes };
-    _.each( languageDemo.searchResponse.results, result => {
-      if ( !_.has( newVotes, result.photo_id ) ) {
-        newVotes[result.photo_id] = true;
-      }
-    } );
-    dispatch( updateState( { votes: newVotes } ) );
-  };
-}
-
-export function voteRemainingDown( ) {
-  return ( dispatch, getState ) => {
-    const { languageDemo } = getState( );
-    const newVotes = { ...languageDemo.votes };
-    _.each( languageDemo.searchResponse.results, result => {
-      if ( !_.has( newVotes, result.photo_id ) ) {
-        newVotes[result.photo_id] = false;
-      }
-    } );
-    dispatch( updateState( { votes: newVotes } ) );
-  };
-}
-
 export function viewInIdentify( ) {
   return ( dispatch, getState ) => {
-    const { languageDemo } = getState( );
+    const { languageSearch } = getState( );
     const observationIDs = _.uniq( _.map(
-      languageDemo.searchResponse.results,
+      languageSearch.searchResponse.results,
       r => ( r.observation.id )
     ) );
     const url = "/observations/identify?quality_grade=needs_id,casual,research"
@@ -350,9 +248,7 @@ export function viewInIdentify( ) {
 export function acknowledgeSubmission( ) {
   return dispatch => {
     dispatch( setAttributes( {
-      votingEnabled: false,
       submissionAcknowledged: true,
-      votes: { }
     } ) );
   };
 }

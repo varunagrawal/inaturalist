@@ -16,7 +16,7 @@ const config = {
       import: "./computer_vision/eval/webpack-entry",
       dependOn: ["react-main", "react-dropzone"]
     },
-    "language-demo": {
+    "language-search": {
       import: "./computer_vision/language/webpack-entry",
       dependOn: ["react-main"]
     },

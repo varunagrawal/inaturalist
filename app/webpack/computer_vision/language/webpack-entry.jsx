@@ -4,12 +4,12 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import inatjs from "inaturalistjs";
 
-import languageDemoReducer, {
+import languageSearchReducer, {
   fetchIconicTaxa,
   matchBrowserState,
   loadFromURL
-} from "./reducers/language_demo_reducer";
-import LanguageDemoContainer from "./containers/language_demo_container";
+} from "./reducers/language_search_reducer";
+import LanguageSearchContainer from "./containers/language_search_container";
 import confirmModalReducer from "../../shared/ducks/confirm_modal";
 import { setConfig } from "../../shared/ducks/config";
 import sharedStore from "../../shared/shared_store";
@@ -17,7 +17,7 @@ import sharedStore from "../../shared/shared_store";
 moment.locale( I18n.locale );
 
 sharedStore.injectReducers( {
-  languageDemo: languageDemoReducer,
+  languageSearch: languageSearchReducer,
   confirmModal: confirmModalReducer
 } );
 
@@ -33,7 +33,7 @@ sharedStore.dispatch( fetchIconicTaxa( ) );
 
 render(
   <Provider store={sharedStore}>
-    <LanguageDemoContainer />
+    <LanguageSearchContainer />
   </Provider>,
   document.getElementById( "app" )
 );

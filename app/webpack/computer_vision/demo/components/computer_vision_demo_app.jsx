@@ -40,12 +40,12 @@ class ComputerVisionDemoApp extends Component {
         <a href="https://www.inaturalist.org">iNaturalist</a>
         {" "}
         has teamed up with
-        the
+        the{" "}
         <a href="https://sites.google.com/visipedia.org/index">
           Visipedia
         </a>
         {" "}
-        project and
+        project and{" "}
         <a href="http://www.nvidia.com/object/machine-learning.html">
           NVIDIA
         </a>

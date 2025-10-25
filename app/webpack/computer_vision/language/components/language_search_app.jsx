@@ -9,7 +9,7 @@ import ConfirmModalContainer from "../../../shared/containers/confirm_modal_cont
 /* global inaturalist, SITE_ICONS */
 /* eslint react/no-danger: 0 */
 
-class ComputerVisionEvalApp extends Component {
+class LanguageSearchApp extends Component {
   constructor( props, context ) {
     super( props, context );
     this.state = {
@@ -91,7 +91,7 @@ class ComputerVisionEvalApp extends Component {
               </a>
             </div>
             <div className="title">
-              {I18n.t("views.nls_demo.vision_language_demo")}
+              {I18n.t("views.language_search.vision_language_search")}
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@ class ComputerVisionEvalApp extends Component {
   }
 
   formActionButtons( ) {
-    let improveButtonText = I18n.t( "views.nls_demo.help_us_improve" );
+    let improveButtonText = I18n.t( "views.language_search.help_us_improve" );
     if ( this.props.votingEnabled ) {
       improveButtonText = I18n.t( "cancel" );
     } else if ( this.props.submissionAcknowledged ) {
@@ -209,7 +209,7 @@ class ComputerVisionEvalApp extends Component {
           <div className="col-md-8">
             <div className="form-group">
               <label htmlFor="search_term">
-                { I18n.t( "views.nls_demo.what_do_you_want_to_search_for" ) }
+                { I18n.t( "views.language_search.what_do_you_want_to_search_for" ) }
               </label>
               <div className="search-input">
                 <input
@@ -218,8 +218,7 @@ class ComputerVisionEvalApp extends Component {
                   id="search_term"
                   type="text"
                   placeholder={I18n.t(
-                    "views.nls_demo.for_example_query",
-                    {
+                    "views.language_search.for_example_query", {
                       query_in_english: "A yellow bug with black spots"
                     }
                   )}
@@ -275,7 +274,7 @@ class ComputerVisionEvalApp extends Component {
             <div className="improve-panel">
               <div
                 dangerouslySetInnerHTML={{
-                  __html: I18n.t( "views.nls_demo.to_help_us_improve", {
+                  __html: I18n.t( "views.language_search.to_help_us_improve", {
                     searched_term: this.props.searchedTerm,
                     thumbs_up_icon: ReactDOMServer.renderToString(
                       <i className="fa fa-thumbs-o-up" />
@@ -286,18 +285,6 @@ class ComputerVisionEvalApp extends Component {
                   } )
                 }}
               />
-              <div className="improve-submit">
-                <button
-                  className="btn btn-success"
-                  type="button"
-                  disabled={_.isEmpty( this.props.votes )}
-                  onClick={() => {
-                    this.props.submitVotes( { scrollTop: true } );
-                  }}
-                >
-                  { I18n.t( "submit" ) }
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -330,50 +317,6 @@ class ComputerVisionEvalApp extends Component {
                 />
               ) ) ) }
             </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  votingActionButtons( options = { } ) {
-    if ( _.isEmpty( this.props.searchedTerm ) || !this.props.votingEnabled ) {
-      return null;
-    }
-    return (
-      <div className="container voting-action-buttons">
-        <div className="row">
-          <div className="col-md-2" />
-          <div className="col-md-8 buttons-container">
-            <button
-              className="btn btn-default"
-              type="button"
-              onClick={( ) => this.props.voteRemainingUp( )}
-            >
-              { I18n.t( "views.nls_demo.mark_remaining_as_relevant" ) }
-              <i className="fa fa-thumbs-o-up" />
-            </button>
-            <button
-              className="btn btn-default"
-              type="button"
-              onClick={( ) => this.props.voteRemainingDown( )}
-            >
-              { I18n.t( "views.nls_demo.mark_remaining_as_not_relevant" ) }
-              <i className="fa fa-thumbs-o-down" />
-            </button>
-            { options.showSubmit && (
-              <button
-                className="btn btn-success submit"
-                type="button"
-                disabled={_.isEmpty( this.props.votes )}
-                onClick={e => {
-                  $( e.target ).blur( );
-                  this.props.submitVotes( { scrollTop: true } );
-                }}
-              >
-                { I18n.t( "submit" ) }
-              </button>
-            ) }
           </div>
         </div>
       </div>
@@ -426,7 +369,7 @@ class ComputerVisionEvalApp extends Component {
                 type="button"
                 onClick={( ) => this.props.viewInIdentify( )}
               >
-                { I18n.t( "views.nls_demo.view_these_observations_in_identify" ) }
+                { I18n.t( "views.language_search.view_these_observations_in_identify" ) }
               </button>
             </div>
           </div>
@@ -460,10 +403,10 @@ class ComputerVisionEvalApp extends Component {
           <div className="col-md-2" />
           <div className="col-md-8">
             <div className="example-searches-panel">
-              { I18n.t( "views.nls_demo.try_one_of_these_example_searches_colon" ) }
+              { I18n.t( "views.language_search.try_one_of_these_example_searches_colon" ) }
               <ul>
                 { _.map( exampleSearches, ( exampleSearch, index ) => {
-                  let href = `/vision_language_demo?q=${exampleSearch.searchTerm.replace( / /g, "+" )}`;
+                  let href = `/language_search?q=${exampleSearch.searchTerm.replace( / /g, "+" )}`;
                   if ( exampleSearch.searchTaxonID ) {
                     href += `&taxon_id=${exampleSearch.searchTaxonID}`;
                   }
@@ -506,18 +449,18 @@ class ComputerVisionEvalApp extends Component {
           <div className="col-md-8">
             <div className="about">
               <p
-                dangerouslySetInnerHTML={{ __html: I18n.t( "views.nls_demo.inaturalist_has_teamed" ) }}
+                dangerouslySetInnerHTML={{ __html: I18n.t( "views.language_search.inaturalist_has_teamed" ) }}
               />
               <p
                 dangerouslySetInnerHTML={{
-                  __html: I18n.t( "views.nls_demo.this_demo_tool3", {
-                    url: "/vision_language_demo?q=a+bird+eating+fruit&taxon_id=3",
+                  __html: I18n.t( "views.language_search.this_demo_tool3", {
+                    url: "/language_search?q=a+bird+eating+fruit&taxon_id=3",
                     query_in_english: "a bird eating fruit"
                   } )
                 }}
               />
               <p
-                dangerouslySetInnerHTML={{ __html: I18n.t( "views.nls_demo.you_can_also_use_this_demo" ) }}
+                dangerouslySetInnerHTML={{ __html: I18n.t( "views.language_search.you_can_also_use_this_demo" ) }}
               />
               <div className="logos">
                 <div className="logo">
@@ -554,10 +497,10 @@ class ComputerVisionEvalApp extends Component {
           <div className="col-md-8">
             <div className="support">
               <p>
-                { I18n.t( "views.nls_demo.if_youd_like_to_support_this_work" ) }
+                { I18n.t( "views.language_search.if_youd_like_to_support_this_work" ) }
               </p>
               <a
-                href="https://www.inaturalist.org/donate?utm_campaign=nls-demo&utm_medium=web&utm_source=inaturalist.org&utm_content=button&utm_term=donate-to-inaturalist"
+                href="https://www.inaturalist.org/donate?utm_campaign=nls-search&utm_medium=web&utm_source=inaturalist.org&utm_content=button&utm_term=donate-to-inaturalist"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -580,11 +523,9 @@ class ComputerVisionEvalApp extends Component {
       <div className="bootstrap">
         { this.header( ) }
         { this.searchForm( ) }
-        { this.helpImproveFlash( ) }
-        { !this.props.votingEnabled && this.pagination( ) }
-        { this.votingActionButtons( ) }
+        {/* { this.helpImproveFlash( ) } */}
+        { this.pagination( ) }
         { this.observationsGrid( ) }
-        { this.votingActionButtons( { showSubmit: true } ) }
         { this.pagination( { showIdentify: true, scrollTop: true } ) }
         { this.exampleSearches( ) }
         { this.about( ) }
@@ -599,21 +540,17 @@ class ComputerVisionEvalApp extends Component {
   }
 }
 
-ComputerVisionEvalApp.propTypes = {
+LanguageSearchApp.propTypes = {
   languageSearch: PropTypes.func,
   searchResponse: PropTypes.object,
   searchStatus: PropTypes.string,
   toggleVoting: PropTypes.func,
   iconicTaxa: PropTypes.object,
-  votingEnabled: PropTypes.bool,
   searchedTerm: PropTypes.string,
   searchedTaxon: PropTypes.object,
-  votes: PropTypes.object,
   submitVotes: PropTypes.func,
   nextPage: PropTypes.func,
   previousPage: PropTypes.func,
-  voteRemainingUp: PropTypes.func,
-  voteRemainingDown: PropTypes.func,
   viewInIdentify: PropTypes.func,
   submissionAcknowledged: PropTypes.bool,
   acknowledgeSubmission: PropTypes.func,
@@ -623,4 +560,4 @@ ComputerVisionEvalApp.propTypes = {
   config: PropTypes.object
 };
 
-export default ComputerVisionEvalApp;
+export default LanguageSearchApp;
